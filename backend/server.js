@@ -17,7 +17,7 @@ app.use(express.json());
  * MongoDB connection
  */
 const uri = process.env.MONGO_DB_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
 const connection = mongoose.connection;
 connection.once('open', () => {
