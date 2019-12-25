@@ -85,11 +85,22 @@ class EditExercise extends Component {
 
         console.log(exercise);  
         console.log(this.props.match.params.id);
-        axios.put('http://localhost:5000/exercises/updateExercise/' + this.props.match.params.id, exercise)
-            .then(res => console.log(res.data))
-            .catch((err) => {
-                console.log(err);
-            });
+        fetch('http://localhost:5000/exercises/updateExercise/' + this.props.match.params.id, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "PUT",
+            body: JSON.stringify(exercise)
+        }).then(res => console.log(res.data))
+        .catch((err) => {
+            console.log(err);
+        });
+        // axios.put('http://localhost:5000/exercises/updateExercise/' + this.props.match.params.id, exercise)
+        //     .then(res => console.log(res.data))
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
         // window.location = '/';
     }
 
