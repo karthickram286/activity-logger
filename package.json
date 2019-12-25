@@ -22,7 +22,8 @@
     "backend": "npm start --prefix backend",
     "build": "react-scripts build",
     "dev": "concurrently \"npm run backend\" \"npm start\"",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +40,4 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
 }
